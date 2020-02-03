@@ -7,7 +7,7 @@ export const typeDefs = [
         query: Query
         mutation: Mutation
     }
-    type Query{
+    type Query{ 
         notes: [Note]!
         note(id: Int!): Note
     }
