@@ -1,19 +1,19 @@
 export const defaults = {
-  note: []
+  notes: []
 };
 export const typeDefs = [
   `
-    schema {
+    extend schema {
         query: Query
         mutation: Mutation
     }
-    type Query{ 
+    extend type Query {
         notes: [Note]!
         note(id: Int!): Note
     }
     type Mutation{
-        createNote(title: String!, content: String!)
-        editNote(id: String!, title: String!, content:String!)
+        createNote(title: String!, content: String!): Note
+        editNote(id: String!, title: String!, content:String!) : Note
     }
     type Note{
         id: Int!
